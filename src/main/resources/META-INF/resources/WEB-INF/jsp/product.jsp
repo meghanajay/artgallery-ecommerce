@@ -13,7 +13,7 @@
 	</div>
 
 	<form method="post">
-		Id : <input name="id" type="number" /> Description : <input
+		Description : <input
 			name="desc" type="text" /> Name : <input name="name" type="text" />
 		Price : <input name="price" type="number" /> <input type="submit" />
 	</form>

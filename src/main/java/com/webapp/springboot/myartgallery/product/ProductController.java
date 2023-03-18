@@ -29,9 +29,9 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/add-product", method = RequestMethod.POST)
-	public String addProduct(ModelMap model, @RequestParam int id, @RequestParam String desc, @RequestParam String name,
+	public String addProduct(ModelMap model, @RequestParam String desc, @RequestParam String name,
 			@RequestParam int price) {
-		productService.addProduct(id, name, desc, price);
+		productService.addProduct(name, desc, price);
 		return "redirect:/productlist";
 	}
 

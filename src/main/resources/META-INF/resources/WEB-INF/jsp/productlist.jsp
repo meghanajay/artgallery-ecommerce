@@ -20,9 +20,9 @@
 			<tbody>
 				<c:forEach items="${productdetails}" var="productdetails">
 					<tr>
-						<td>${productdetails.pid}</td>
-						<td>${productdetails.pname}</td>
-						<td>${productdetails.pdescription}</td>
+						<td>${productdetails.id}</td>
+						<td>${productdetails.name}</td>
+						<td>${productdetails.desc}</td>
 						<td>${productdetails.price}</td>
 					</tr>
 				</c:forEach>
