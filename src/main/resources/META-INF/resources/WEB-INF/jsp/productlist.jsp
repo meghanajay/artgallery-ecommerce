@@ -27,7 +27,7 @@
 					</tr>
 				</c:forEach>
 			</tbody>
-			<a href="add-productdetails" class="btn btn-success">Add</a>
+			<a href="add-product" class="btn btn-success">Add</a>
 		</table>
 
 	</div>
