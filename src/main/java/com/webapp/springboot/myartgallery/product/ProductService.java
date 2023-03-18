@@ -18,7 +18,7 @@ public class ProductService {
 		return productDetails;
 	}
 
-	public void addProduct(String prodName, String desc, int price) {
+	public void addProduct(int id, String prodName, String desc, int price) {
 		productDetails.add(new ProductDetails(++counter, prodName, desc, price));
 	}
 }
