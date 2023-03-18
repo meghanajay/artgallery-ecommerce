@@ -2,23 +2,24 @@ package com.webapp.springboot.myartgallery.product;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProductService {
-	private static List<ProductDetails> productDetails = new ArrayList();
-	private static int counter = 2;
+	
+	@Autowired
+	ProductRepo productRep;
 
-	static {
-		productDetails.add(new ProductDetails(1, "Ganesha", "A4 size pencil sketch", 400));
-		productDetails.add(new ProductDetails(2, "Ocean", "A4 size painting", 200));
+
+	public List<ProductInfo> getProducts() {
+		List<ProductInfo> productInfo = new ArrayList<ProductInfo>();
+		productRep.findAll().forEach(prod -> productInfo.add(prod));
+		return productInfo;
 	}
 
-	public List<ProductDetails> getProducts() {
-		return productDetails;
-	}
-
-	public void addProduct(int id, String prodName, String desc, int price) {
-		productDetails.add(new ProductDetails(++counter, prodName, desc, price));
+	public void addProduct(String prodName, String desc, int price) {
+		productRep.save(new ProductInfo(prodName, desc, price));
 	}
 }
