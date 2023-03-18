@@ -6,15 +6,19 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProductService {
-	private static List<ProductDetails> productdetails = new ArrayList();
+	private static List<ProductDetails> productDetails = new ArrayList();
+	private static int counter = 2;
 
 	static {
-		productdetails.add(new ProductDetails(1, "Ganesha", "A4 size pencil sketch", 400));
-		productdetails.add(new ProductDetails(2, "Ocean", "A4 size painting", 200));
+		productDetails.add(new ProductDetails(1, "Ganesha", "A4 size pencil sketch", 400));
+		productDetails.add(new ProductDetails(2, "Ocean", "A4 size painting", 200));
 	}
 
 	public List<ProductDetails> getProducts() {
-		return productdetails;
+		return productDetails;
 	}
 
+	public void addProduct(int id, String prodName, String desc, int price) {
+		productDetails.add(new ProductDetails(++counter, prodName, desc, price));
+	}
 }
