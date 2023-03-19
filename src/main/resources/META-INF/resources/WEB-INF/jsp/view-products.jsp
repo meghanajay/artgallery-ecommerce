@@ -18,12 +18,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${productdetails}" var="productdetails">
+				<c:forEach items="${productinfo}" var="productinfo">
 					<tr>
-						<td>${productdetails.id}</td>
-						<td>${productdetails.name}</td>
-						<td>${productdetails.desc}</td>
-						<td>${productdetails.price}</td>
+						<td>${productinfo.id}</td>
+						<td>${productinfo.name}</td>
+						<td>${productinfo.desc}</td>
+						<td>${productinfo.price}</td>
+						<td><a href="update-product/${productinfo.id}" class="btn btn-success">Edit</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
